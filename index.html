@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="main-menu">
+        <h1>Hangman Game</h1>
+        <div id="difficulty-select-main">
+            <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+            <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+            <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+        </div>
+        <button id="start-game-btn" style="margin-top: 20px;">Start Game</button>
+    </div>
+    <div id="game-container">
+        <h1>Hangman Game</h1>
+        <svg id="hangman-drawing" viewBox="0 0 200 250">
+            <line x1="20" y1="230" x2="180" y2="230" stroke="black" stroke-width="4"/>
+            <line x1="40" y1="230" x2="40" y2="20" stroke="black" stroke-width="4"/>
+            <line x1="40" y1="20" x2="140" y2="20" stroke="black" stroke-width="4"/>
+            <line x1="140" y1="20" x2="140" y2="50" stroke="black" stroke-width="4"/>
+            <g id="hangman">
+                <circle id="head" cx="140" cy="70" r="20" stroke="black" stroke-width="4" fill="none" visibility="hidden"/>
+                <line id="body" x1="140" y1="90" x2="140" y2="150" stroke="black" stroke-width="4" visibility="hidden"/>
+                <line id="left-arm" x1="140" y1="120" x2="120" y2="100" stroke="black" stroke-width="4" visibility="hidden"/>
+                <line id="right-arm" x1="140" y1="120" x2="160" y2="100" stroke="black" stroke-width="4" visibility="hidden"/>
+                <line id="left-leg" x1="140" y1="150" x2="120" y2="180" stroke="black" stroke-width="4" visibility="hidden"/>
+                <line id="right-leg" x1="140" y1="150" x2="160" y2="180" stroke="black" stroke-width="4" visibility="hidden"/>
+            </g>
+        </svg>
+        <div id="word-display"></div>
+        <div id="keyboard"></div>
+        <p id="message"></p>
+        <p id="money-display">Money: $0</p>
+        <button id="hint-btn">Buy Hint ($5)</button>
+        <button id="leave-game-btn">Main Menu</button>
+        <button id="restart-btn" style="display: none;">Restart Game</button>
+        <button id="main-menu-btn" style="display: none;">Main Menu</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
